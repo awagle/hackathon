@@ -9,7 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ com.tibco.bw.model.eclipse
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.impl;version="6.0.0",

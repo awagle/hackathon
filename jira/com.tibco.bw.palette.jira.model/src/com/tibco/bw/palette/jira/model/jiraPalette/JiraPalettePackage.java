@@ -36,7 +36,7 @@ public interface JiraPalettePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://ns.tibco.com/bw/palette/jdbc";
+	String eNS_URI = "http://ns.tibco.com/bw/palette/jira";
 
 	/**
 	 * The package namespace name.

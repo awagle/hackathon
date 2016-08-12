@@ -9,9 +9,18 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated JIRA -->
       <package
-            uri="http://ns.tibco.com/bw/palette/jdbc"
+            uri="http://ns.tibco.com/bw/palette/jira"
             class="com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage"
             genModel="model/JIRA.genmodel"/>
+   </extension>
+   <extension
+         point="com.tibco.bw.model.ActivityIcon">
+      <activityIcon
+            activityTypeID="bw.jira.JIRAQuery"
+            diagramIcon="icons/obj48/Call.gif"
+            largeIcon="icons/obj32/Call.gif"
+            smallIcon="icons/obj16/Call.gif">
+      </activityIcon>
    </extension>
 
 </plugin>
