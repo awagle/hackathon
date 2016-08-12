@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jira" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jira">
+
+<xs:complexType name="jiraQueryActivityInput">
+	<xs:sequence>
+		<xs:element maxOccurs="1" minOccurs="1" name="jql" type="xs:string"/>
+		<xs:element maxOccurs="1" minOccurs="0" name="timeout" type="xs:int"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="jiraQueryActivityInput" type="tns:jiraQueryActivityInput"/>
+
+</xs:schema>

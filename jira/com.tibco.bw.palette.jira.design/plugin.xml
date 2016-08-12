@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.tibco.bw.design.Palette">
+      <paletteDrawer
+            expanded="false"
+            name="JIRA"
+            paletteID="bw.jira"
+            priority="50"
+            smallIcon="icons/obj16/getConnection.gif">
+      </paletteDrawer>
+   </extension>
+   <extension
+         point="com.tibco.bw.design.ActivityType">
+      <activityType
+            activityTypeID="bw.jira.JIRAQuery"
+            name="JIRA Query"
+            priority="200"
+            type="Standard"
+            visible="true">
+         <palette
+               paletteID="bw.jira">
+         </palette>
+      </activityType>
+   </extension>
+   <extension
+         point="com.tibco.bw.design.ActivityTypeConfigEMF">
+        <config
+              activityTypeID="bw.jira.JIRAQuery"
+              eClassName="Query"
+              ePackageNSURI="http://ns.tibco.com/bw/palette/jira"
+              instanceName="JIRA Query"
+              modelHelperClass="com.tibco.bw.palette.jira.design.query.JIRAQueryModelHelper">
+      </config>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="com.tibco.bw.core.design.process.editor">
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.tibco.bw.palette.jira.design.query.JIRAQueryGeneralPropertySection"
+               filter="com.tibco.bw.palette.jira.design.query.JIRAQueryGeneralPropertySection"
+               id="bw.jira.JIRAQuery.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="com.tibco.bw.design.ActivitySignature">
+      <signature
+            activityTypeID="bw.jira.JIRAQuery"
+            signatureClass="com.tibco.bw.palette.jira.design.query.JIRAQuerySignature">
+      </signature>
+   </extension>
+ 
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Design
+Bundle-SymbolicName: com.tibco.bw.palette.jira.design;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.tibco.bw.palette.jira.design.Activator
+Bundle-Vendor: TIBCO
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.tibco.bw.design,
+ com.tibco.bw.model.eclipse;bundle-version="6.3.200"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="6.0.0",
+ com.tibco.bw.palette.jira.model.jiraPalette.impl;version="6.0.0",
+ com.tibco.bw.palette.jira.model.jiraPalette.util;version="6.0.0"
