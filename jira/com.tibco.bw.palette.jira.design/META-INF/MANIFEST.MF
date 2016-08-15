@@ -13,4 +13,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Import-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.impl;version="6.0.0",
- com.tibco.bw.palette.jira.model.jiraPalette.util;version="6.0.0"
+ com.tibco.bw.palette.jira.model.jiraPalette.util;version="6.0.0",
+ com.tibco.bw.sharedresource.httpclient.model.httpclient;version="[6.3.0,7.0.0)",
+ com.tibco.bw.sharedresource.tcpclient.model.tcpclient;version="[6.3.0,7.0.0)"

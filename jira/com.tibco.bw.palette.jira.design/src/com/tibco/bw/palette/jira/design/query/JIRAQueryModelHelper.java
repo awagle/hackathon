@@ -1,16 +1,19 @@
 package com.tibco.bw.palette.jira.design.query;
 
-import java.util.List;
+import javax.xml.namespace.QName;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.jface.viewers.ILabelProvider;
 
-import com.tibco.bw.design.api.BWActivityModelHelper;
-import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
+import com.tibco.bw.design.api.BWAbstractModelHelper;
+import com.tibco.bw.design.util.ModelHelper;
+import com.tibco.bw.design.util.ProcessProperty;
+import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 
-public class JIRAQueryModelHelper implements BWActivityModelHelper {
+public class JIRAQueryModelHelper extends BWAbstractModelHelper {
+
+	QName HTTP_QNAME = new QName("http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient", "HttpClientConfiguration");
+
 
 	public JIRAQueryModelHelper() {
 		// TODO Auto-generated constructor stub
@@ -18,53 +21,35 @@ public class JIRAQueryModelHelper implements BWActivityModelHelper {
 
 	@Override
 	public EObject createInstance() {
-		// TODO Auto-generated method stub
-		Query instance = JiraPalettePackage.eINSTANCE.getJiraPaletteFactory().createQuery();
-		instance.setExpandNames("myfields");
+		Query instance = JiraPaletteFactory.eINSTANCE.createQuery();
 		return instance;
 	}
 
-	@Override
-	public List<String> getGovernedObjectTypes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
-	public ILabelProvider getLabelProvider() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void setProcessProperty(EObject model, Object container) {
+		if (model == null) {
+			return;
+		}
+		if (container == null) {
+			return;
+		}
+		boolean found = false;
+		for (ProcessProperty property : ModelHelper.INSTANCE.getProperties(container)) {
+			if (ModelHelper.INSTANCE.isEqual(property.getType(), HTTP_QNAME)) {
+				((Query) model).setConnection(property.getName());
+				found = true;
+				break;
+			}
+		}
 
-	@Override
-	public boolean isPolicyEnabled() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isVisible(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean notifyOnModification(EStructuralFeature arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void notifyOnPropertyValueChanged(Object arg0, String arg1,
-			String arg2) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void postCreate(EObject arg0, Object arg1) {
-		// TODO Auto-generated method stub
-
+		if (!found) {
+			ProcessProperty property = ModelHelper.INSTANCE.createProperty(container, "jiraProperty", HTTP_QNAME, "");
+			if (property != null) {
+				((Query) model).setConnection(property.getName());
+			}
+		}
 	}
 
 }

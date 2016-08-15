@@ -14,7 +14,7 @@ import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 
 public class JIRAQueryGeneralPropertySection extends
 AbstractBWTransactionalSection {
-	QName HTTP_QNAME = new QName("{http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient}", "HttpClientConfiguration");
+	QName HTTP_QNAME = new QName("http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient", "HttpClientConfiguration");
 	private PropertyField propField;
 	private Text textField;
 
@@ -24,7 +24,6 @@ AbstractBWTransactionalSection {
 
 	@Override
 	protected void initBindings() {
-		// TODO Auto-generated method stub
 		getBindingManager().bind(propField, JiraPalettePackage.Literals.QUERY__CONNECTION, getInput(), 
 				BWFieldFactory.getInstance().getPropertyTargetToModelUpdateValueStrategy(), null);
 
@@ -34,11 +33,9 @@ AbstractBWTransactionalSection {
 
 	@Override
 	protected Composite doCreateControl(Composite root) {
-		// TODO Auto-generated method stub
 		Composite parent = BWFieldFactory.getInstance().createComposite(root, 2);
 		BWFieldFactory.getInstance().createLabel(parent, "Connection", true);
 		propField = BWFieldFactory.getInstance().createPropertyField(parent, BWDesignConstants.PROPERTY, HTTP_QNAME);
-		propField.setDefaultPropertyPrefix("jira");
 
 		BWFieldFactory.getInstance().createLabel(parent, "OutputFields", true);
 		textField = BWFieldFactory.getInstance().createTextBox(parent);
