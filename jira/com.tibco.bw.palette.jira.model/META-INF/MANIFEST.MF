@@ -5,7 +5,6 @@ Bundle-SymbolicName: com.tibco.bw.palette.jira.model;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
-Bundle-Activator: com.tibco.bw.palette.jira.model.Activator
 Bundle-Vendor: TIBCO
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
