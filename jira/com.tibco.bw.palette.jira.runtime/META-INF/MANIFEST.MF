@@ -3,14 +3,36 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Runtime
 Bundle-SymbolicName: com.tibco.bw.palette.jira.runtime
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.tibco.bw.palette.jira.runtime.Activator
 Bundle-Vendor: TIBCO
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Import-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="[6.0.0,7.0.0)",
- com.tibco.bw.runtime;version="[6.3.100,7.0.0)",
- com.tibco.bw.runtime.annotation;version="[6.3.100,7.0.0)",
- com.tibco.neo.localized;version="[2.6.2,3.0.0)",
+ com.tibco.bw.palette.jira.model.jiraPalette.impl;version="[6.0.0,7.0.0)",
+ com.tibco.bw.palette.jira.model.jiraPalette.util;version="[6.0.0,7.0.0)",
+ com.tibco.bw.runtime;version="[6.3.0,7.0.0)",
+ com.tibco.bw.runtime.annotation;version="[6.3.0,7.0.0)",
+ com.tibco.bw.sharedresource.http.api.client;version="[6.4.0,7.0.0)",
+ com.tibco.bw.sharedresource.http.client.runtime;version="[6.4.0,7.0.0)",
+ com.tibco.bw.sharedresource.runtime;version="[6.2.0,7.0.0)",
+ com.tibco.bw.sharedresource.trinity.identity.subject.runtime;version="[6.4.0,7.0.0)",
+ com.tibco.neo.localized;version="[2.6.0,3.0.0)",
+ javax.ws.rs;version="[2.0.0,3.0.0)",
+ javax.ws.rs.client;version="[2.0.0,3.0.0)",
+ javax.ws.rs.container;version="[2.0.0,3.0.0)",
+ javax.ws.rs.core;version="[2.0.0,3.0.0)",
+ javax.ws.rs.ext;version="[2.0.0,3.0.0)",
+ org.apache.http;version="[4.0.0,5.0.0)",
+ org.apache.http.auth;version="[4.0.0,5.0.0)",
+ org.apache.http.client;version="[4.0.0,5.0.0)",
+ org.apache.http.client.config;version="[4.10.0,5.0.0)",
+ org.apache.http.client.methods;version="[4.10.0,5.0.0)",
+ org.apache.http.client.protocol;version="[4.10.0,5.0.0)",
+ org.apache.http.conn;version="[4.10.0,5.0.0)",
+ org.apache.http.conn.socket;version="[4.10.0,5.0.0)",
+ org.apache.http.entity;version="[4.10.0,5.0.0)",
+ org.apache.http.impl.client;version="[4.0.0,5.0.0)",
+ org.apache.http.protocol;version="[4.10.0,5.0.0)",
+ org.apache.http.util;version="[4.10.0,5.0.0)",
  org.genxdm;version="[1.2.0,2.0.0)",
  org.genxdm.axes;version="[1.2.0,2.0.0)",
  org.genxdm.exceptions;version="[1.2.0,2.0.0)",
@@ -19,6 +41,19 @@ Import-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="[6.0.0,7.0.
  org.genxdm.nodes;version="[1.2.0,2.0.0)",
  org.genxdm.typed;version="[1.2.0,2.0.0)",
  org.genxdm.typed.types;version="[1.2.0,2.0.0)",
+ org.glassfish.jersey;version="[2.21.0,3.0.0)",
+ org.glassfish.jersey.client;version="[2.0.0,3.0.0)",
+ org.glassfish.jersey.client.spi;version="[2.0.0,3.0.0)",
+ org.glassfish.jersey.internal.util;version="[2.21.0,3.0.0)",
+ org.glassfish.jersey.message.internal;version="[2.21.0,3.0.0)",
  org.osgi.framework;version="[1.8.0,2.0.0)"
 Service-Component: OSGI-INF/jiraquerycomponent.xml
 Provide-Capability: com.tibco.bw.palette; name=bw.jira
+Bundle-ClassPath: lib/jersey-apache-connector-2.17.jar, .
+Export-Package: com.tibco.bw.palette.jira.runtime;version="6.0.0";
+  uses:="com.tibco.bw.runtime,
+   com.tibco.bw.sharedresource.http.client.runtime,
+   org.osgi.framework,
+   javax.ws.rs.client,
+   com.tibco.bw.palette.jira.model.jiraPalette"
+Bundle-Activator: com.tibco.bw.palette.jira.runtime.Activator
