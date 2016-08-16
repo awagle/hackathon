@@ -7,7 +7,8 @@ Bundle-Activator: com.tibco.bw.palette.jira.runtime.Activator
 Bundle-Vendor: TIBCO
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Import-Package: com.tibco.bw.runtime;version="[6.3.100,7.0.0)",
+Import-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="[6.0.0,7.0.0)",
+ com.tibco.bw.runtime;version="[6.3.100,7.0.0)",
  com.tibco.bw.runtime.annotation;version="[6.3.100,7.0.0)",
  com.tibco.neo.localized;version="[2.6.2,3.0.0)",
  org.genxdm;version="[1.2.0,2.0.0)",
@@ -19,5 +20,5 @@ Import-Package: com.tibco.bw.runtime;version="[6.3.100,7.0.0)",
  org.genxdm.typed;version="[1.2.0,2.0.0)",
  org.genxdm.typed.types;version="[1.2.0,2.0.0)",
  org.osgi.framework;version="[1.8.0,2.0.0)"
-Require-Bundle: com.tibco.bw.palette.jira.model
 Service-Component: OSGI-INF/jiraquerycomponent.xml
+Provide-Capability: com.tibco.bw.palette; name=bw.jira
