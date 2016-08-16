@@ -4,15 +4,22 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: com.tibco.bw.palette.jira.model;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: com.tibco.bw.palette.jira.model.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- com.tibco.bw.model.eclipse
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.impl;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.util;version="6.0.0"
 Bundle-ActivationPolicy: lazy
+Import-Package: com.tibco.org.oasis.sca;version="[6.0.200,7.0.0)",
+ org.eclipse.emf.common;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.common.notify;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.common.notify.impl;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.common.util;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.ecore;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.ecore.impl;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.ecore.plugin;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.ecore.util;version="[0.0.0,3.0.0)",
+ org.eclipse.emf.ecore.xml.type;version="[0.0.0,3.0.0)",
+ org.eclipse.osgi.util;version="[0.0.0,2.0.0)",
+ org.eclipse.xsd
