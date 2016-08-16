@@ -25,3 +25,4 @@ Import-Package: com.tibco.org.oasis.sca;version="[6.0.200,7.0.0)",
  org.eclipse.emf.ecore.xml.type;version="[0.0.0,3.0.0)",
  org.eclipse.osgi.util;version="[0.0.0,2.0.0)",
  org.eclipse.xsd
+Provide-Capability: com.tibco.bw.model; name=bw.jira
