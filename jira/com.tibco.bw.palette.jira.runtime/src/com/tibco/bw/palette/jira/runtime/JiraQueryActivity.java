@@ -1,16 +1,12 @@
 package com.tibco.bw.palette.jira.runtime;
 
-import java.net.SocketTimeoutException;
 import java.net.URI;
-import java.util.ArrayList;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.http.HttpException;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
@@ -21,6 +17,7 @@ import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.JerseyClientBuilder;
+import org.glassfish.jersey.uri.UriComponent;
 
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 import com.tibco.bw.runtime.ActivityFault;
@@ -48,12 +45,14 @@ public class JiraQueryActivity<N> extends SyncActivity<N>  {
 	
 	private Client client;
 	URI url; 
-	private static final ArrayList<Class> httpCommunicationExceptions = new ArrayList<Class>();
+	
+//	private static final ArrayList<Class> httpCommunicationExceptions = new ArrayList<Class>();
 	
 	@Override
 	public void init() throws ActivityLifecycleFault {
 		super.init();
 		try{
+			
 //			initHttpCommunicationExceptions();
 			
 			String host = driverFactory.getClientConfiguration().getHost();
@@ -80,6 +79,7 @@ public class JiraQueryActivity<N> extends SyncActivity<N>  {
 					 }
 					 if(credsProvider != null){
 						 config.property(ApacheClientProperties.CREDENTIALS_PROVIDER, credsProvider);
+						 config.property(ApacheClientProperties.PREEMPTIVE_BASIC_AUTHENTICATION, true);
 					 }
 				 }
 			}
@@ -105,24 +105,28 @@ public class JiraQueryActivity<N> extends SyncActivity<N>  {
 		Model<N> xmlModel = getActivityContext().getXMLProcessingContext().getMutableContext().getModel();
 		N jqlNode = xmlModel.getFirstChildElementByName(input, "", "jql");
 		String jql = xmlModel.getStringValue(jqlNode);
-		resource = resource.queryParam("jql", jql);
+		
+//		resource = resource.queryParam("maxResults", 2);
+		resource = resource.queryParam("jql", UriComponent.encode(jql, UriComponent.Type.QUERY_PARAM_SPACE_ENCODED));
 		System.out.println("Resource is *** " + resource);
 		Invocation.Builder builder = resource.request();
-		builder.accept(MediaType.APPLICATION_JSON_TYPE);
-		Response rs = builder.get(Response.class);
-		System.out.println("Response received is $$$$" + rs.getEntity() );
+		
+		try{
+			Response rs = builder.get(Response.class);
+			String response = rs.readEntity(String.class);
+			System.out.println("Response received is $$$$" +  response);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 		return null;
 	}
 	
 	@Property
 	public Query activityConfig;
 
-	private void initHttpCommunicationExceptions(){
-		httpCommunicationExceptions.add(SocketTimeoutException.class);
-		httpCommunicationExceptions.add(HttpException.class);
-	}
+//	private void initHttpCommunicationExceptions(){
+//		httpCommunicationExceptions.add(SocketTimeoutException.class);
+//		httpCommunicationExceptions.add(HttpException.class);
+//	}
 	
-	private void registerFilters() {
-		
-	}
 }
