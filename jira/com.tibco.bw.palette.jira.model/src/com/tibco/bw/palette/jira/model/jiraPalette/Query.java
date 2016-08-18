@@ -2,6 +2,7 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.Query#getExpandNames <em>Expand Names</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.Query#getConnection <em>Connection</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.Query#getCustomFields <em>Custom Fields</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +75,21 @@ public interface Query extends EObject {
 	 * @generated
 	 */
 	void setConnection(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Custom Fields</b></em>' containment reference list.
+	 * The list contents are of type {@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Custom Fields</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Custom Fields</em>' containment reference list.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage#getQuery_CustomFields()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<JIRACustomField> getCustomFields();
 
 } // Query

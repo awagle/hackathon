@@ -2,6 +2,8 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 
+import com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema;
+import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
@@ -10,6 +12,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -25,6 +28,20 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * @generated
 	 */
 	private EClass queryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jiraCustomFieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldSchemaEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -119,6 +136,69 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getQuery_CustomFields() {
+		return (EReference)queryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getJIRACustomField() {
+		return jiraCustomFieldEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJIRACustomField_Label() {
+		return (EAttribute)jiraCustomFieldEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJIRACustomField_Id() {
+		return (EAttribute)jiraCustomFieldEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFieldSchema() {
+		return fieldSchemaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFieldSchema_Type() {
+		return (EAttribute)fieldSchemaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFieldSchema_Custom() {
+		return (EAttribute)fieldSchemaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public JiraPaletteFactory getJiraPaletteFactory() {
 		return (JiraPaletteFactory)getEFactoryInstance();
 	}
@@ -145,6 +225,15 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		queryEClass = createEClass(QUERY);
 		createEAttribute(queryEClass, QUERY__EXPAND_NAMES);
 		createEAttribute(queryEClass, QUERY__CONNECTION);
+		createEReference(queryEClass, QUERY__CUSTOM_FIELDS);
+
+		jiraCustomFieldEClass = createEClass(JIRA_CUSTOM_FIELD);
+		createEAttribute(jiraCustomFieldEClass, JIRA_CUSTOM_FIELD__LABEL);
+		createEAttribute(jiraCustomFieldEClass, JIRA_CUSTOM_FIELD__ID);
+
+		fieldSchemaEClass = createEClass(FIELD_SCHEMA);
+		createEAttribute(fieldSchemaEClass, FIELD_SCHEMA__TYPE);
+		createEAttribute(fieldSchemaEClass, FIELD_SCHEMA__CUSTOM);
 	}
 
 	/**
@@ -180,6 +269,15 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuery_ExpandNames(), ecorePackage.getEString(), "expandNames", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuery_Connection(), ecorePackage.getEString(), "connection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuery_CustomFields(), this.getJIRACustomField(), null, "customFields", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(jiraCustomFieldEClass, JIRACustomField.class, "JIRACustomField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJIRACustomField_Label(), ecorePackage.getEString(), "label", null, 0, 1, JIRACustomField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJIRACustomField_Id(), ecorePackage.getEString(), "id", null, 0, 1, JIRACustomField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldSchemaEClass, FieldSchema.class, "FieldSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFieldSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, FieldSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFieldSchema_Custom(), ecorePackage.getEString(), "custom", null, 0, 1, FieldSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

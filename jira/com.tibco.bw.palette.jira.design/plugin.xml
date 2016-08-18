@@ -55,5 +55,20 @@
             signatureClass="com.tibco.bw.palette.jira.design.query.JIRAQuerySignature">
       </signature>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.tibco.bw.palette.jira.design.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="tibco.preference.bw.palettes"
+            class="com.tibco.bw.palette.jira.design.preferences.JIRAPreferencePage"
+            id="com.tibco.bw.palette.jira.design.preferences.JIRAPreferencePage"
+            name="JIRA Preferences">
+      </page>
+   </extension>
  
 </plugin>

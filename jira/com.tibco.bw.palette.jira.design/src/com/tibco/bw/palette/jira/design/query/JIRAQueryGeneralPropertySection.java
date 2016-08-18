@@ -1,8 +1,12 @@
 package com.tibco.bw.palette.jira.design.query;
 
+import java.util.ArrayList;
+
 import javax.xml.namespace.QName;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
@@ -14,6 +18,8 @@ import com.tibco.bw.design.field.PropertyField;
 import com.tibco.bw.design.propertysection.AbstractBWTransactionalSection;
 import com.tibco.bw.design.util.BWDesignConstants;
 import com.tibco.bw.design.util.ModelHelper;
+import com.tibco.bw.palette.jira.design.fieldselector.dialog.FieldSelectionStatusDialog;
+import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 import com.tibco.bw.sharedresource.httpclient.model.httpclient.HttpClientConfiguration;
@@ -46,20 +52,36 @@ AbstractBWTransactionalSection {
 		BWFieldFactory.getInstance().createLabel(parent, "OutputFields", true);
 		textField = BWFieldFactory.getInstance().createTextBox(parent);
 
-		Button lookupFields = BWFieldFactory.getInstance().createButton(parent, "Pick Fields", "Connect to the JIRA instance to pick fields", null);
+		final Button lookupFields = BWFieldFactory.getInstance().createButton(parent, "Pick Fields", "Connect to the JIRA instance to pick fields", null);
 		lookupFields.addSelectionListener(new SelectionAdapter() {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				System.out.println("Widget selected");
 				try{
-					Query model = (Query)getInput();
+					final Query model = (Query)getInput();
 					String value = ModelHelper.INSTANCE.getProperty(getInput(), model.getConnection()).getDefaultValue();
 					EObject srConfig = ModelHelper.INSTANCE.getSharedResourceConfiguration(getInput(), value);
 					if(srConfig instanceof HttpClientConfiguration){
 						HttpClientConfiguration sharedConfig = (HttpClientConfiguration) srConfig;
 						String host = sharedConfig.getTcpDetails().getHost();
 						int port = sharedConfig.getTcpDetails().getPort();
+						FieldSelectionStatusDialog dialog = new FieldSelectionStatusDialog(lookupFields.getShell(),host,port,"/rest/api/2/field", model.getCustomFields());
+						int status = dialog.open();
+						if(status == IStatus.OK){
+							final ArrayList<JIRACustomField> result = dialog.getFieldsList();
+
+							RecordingCommand updateModel = new RecordingCommand(getEditingDomain()) {
+
+								@Override
+								protected void doExecute() {
+									for (JIRACustomField jiraCustomField : result) {
+										model.getCustomFields().add(jiraCustomField);
+									}
+								}
+							};
+							execute(updateModel);
+						}
 					}
 				} catch (Exception ex){
 					ex.printStackTrace();

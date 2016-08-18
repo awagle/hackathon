@@ -5,6 +5,7 @@ package com.tibco.bw.palette.jira.model.jiraPalette;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,13 +84,98 @@ public interface JiraPalettePackage extends EPackage {
 	int QUERY__CONNECTION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Custom Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY__CUSTOM_FIELDS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUERY_FEATURE_COUNT = 2;
+	int QUERY_FEATURE_COUNT = 3;
+
+
+	/**
+	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl <em>JIRA Custom Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getJIRACustomField()
+	 * @generated
+	 */
+	int JIRA_CUSTOM_FIELD = 1;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JIRA_CUSTOM_FIELD__LABEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JIRA_CUSTOM_FIELD__ID = 1;
+
+	/**
+	 * The number of structural features of the '<em>JIRA Custom Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JIRA_CUSTOM_FIELD_FEATURE_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl <em>Field Schema</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getFieldSchema()
+	 * @generated
+	 */
+	int FIELD_SCHEMA = 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_SCHEMA__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_SCHEMA__CUSTOM = 1;
+
+	/**
+	 * The number of structural features of the '<em>Field Schema</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_SCHEMA_FEATURE_COUNT = 2;
 
 
 	/**
@@ -123,6 +209,81 @@ public interface JiraPalettePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getQuery_Connection();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.tibco.bw.palette.jira.model.jiraPalette.Query#getCustomFields <em>Custom Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Custom Fields</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Query#getCustomFields()
+	 * @see #getQuery()
+	 * @generated
+	 */
+	EReference getQuery_CustomFields();
+
+	/**
+	 * Returns the meta object for class '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField <em>JIRA Custom Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>JIRA Custom Field</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField
+	 * @generated
+	 */
+	EClass getJIRACustomField();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getLabel()
+	 * @see #getJIRACustomField()
+	 * @generated
+	 */
+	EAttribute getJIRACustomField_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getId()
+	 * @see #getJIRACustomField()
+	 * @generated
+	 */
+	EAttribute getJIRACustomField_Id();
+
+	/**
+	 * Returns the meta object for class '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema <em>Field Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Field Schema</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema
+	 * @generated
+	 */
+	EClass getFieldSchema();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getType()
+	 * @see #getFieldSchema()
+	 * @generated
+	 */
+	EAttribute getFieldSchema_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getCustom <em>Custom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Custom</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getCustom()
+	 * @see #getFieldSchema()
+	 * @generated
+	 */
+	EAttribute getFieldSchema_Custom();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -171,6 +332,66 @@ public interface JiraPalettePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QUERY__CONNECTION = eINSTANCE.getQuery_Connection();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUERY__CUSTOM_FIELDS = eINSTANCE.getQuery_CustomFields();
+
+		/**
+		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl <em>JIRA Custom Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getJIRACustomField()
+		 * @generated
+		 */
+		EClass JIRA_CUSTOM_FIELD = eINSTANCE.getJIRACustomField();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JIRA_CUSTOM_FIELD__LABEL = eINSTANCE.getJIRACustomField_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JIRA_CUSTOM_FIELD__ID = eINSTANCE.getJIRACustomField_Id();
+
+		/**
+		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl <em>Field Schema</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getFieldSchema()
+		 * @generated
+		 */
+		EClass FIELD_SCHEMA = eINSTANCE.getFieldSchema();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD_SCHEMA__TYPE = eINSTANCE.getFieldSchema_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD_SCHEMA__CUSTOM = eINSTANCE.getFieldSchema_Custom();
 
 	}
 

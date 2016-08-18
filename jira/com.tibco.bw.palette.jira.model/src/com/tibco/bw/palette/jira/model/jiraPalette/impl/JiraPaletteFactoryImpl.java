@@ -57,6 +57,8 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case JiraPalettePackage.QUERY: return createQuery();
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD: return createJIRACustomField();
+			case JiraPalettePackage.FIELD_SCHEMA: return createFieldSchema();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +72,26 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	public Query createQuery() {
 		QueryImpl query = new QueryImpl();
 		return query;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JIRACustomField createJIRACustomField() {
+		JIRACustomFieldImpl jiraCustomField = new JIRACustomFieldImpl();
+		return jiraCustomField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FieldSchema createFieldSchema() {
+		FieldSchemaImpl fieldSchema = new FieldSchemaImpl();
+		return fieldSchema;
 	}
 
 	/**

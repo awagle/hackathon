@@ -31,6 +31,24 @@ public interface JiraPaletteFactory extends EFactory {
 	Query createQuery();
 
 	/**
+	 * Returns a new object of class '<em>JIRA Custom Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>JIRA Custom Field</em>'.
+	 * @generated
+	 */
+	JIRACustomField createJIRACustomField();
+
+	/**
+	 * Returns a new object of class '<em>Field Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field Schema</em>'.
+	 * @generated
+	 */
+	FieldSchema createFieldSchema();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

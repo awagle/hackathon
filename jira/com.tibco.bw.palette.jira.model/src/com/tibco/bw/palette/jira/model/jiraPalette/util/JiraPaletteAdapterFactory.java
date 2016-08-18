@@ -72,6 +72,14 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 				return createQueryAdapter();
 			}
 			@Override
+			public Adapter caseJIRACustomField(JIRACustomField object) {
+				return createJIRACustomFieldAdapter();
+			}
+			@Override
+			public Adapter caseFieldSchema(FieldSchema object) {
+				return createFieldSchemaAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -102,6 +110,34 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQueryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField <em>JIRA Custom Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField
+	 * @generated
+	 */
+	public Adapter createJIRACustomFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema <em>Field Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema
+	 * @generated
+	 */
+	public Adapter createFieldSchemaAdapter() {
 		return null;
 	}
 
