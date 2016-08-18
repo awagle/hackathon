@@ -33,6 +33,7 @@ import com.tibco.bw.design.field.BWFieldFactory;
 import com.tibco.bw.palette.jira.design.Activator;
 import com.tibco.bw.palette.jira.design.fieldselector.model.CustomField;
 import com.tibco.bw.palette.jira.design.preferences.PreferenceConstants;
+import com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema;
 import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 
@@ -101,11 +102,16 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					table.removeAll();
-					result.clear();
-					pojoFieldModels.clear();
+					if(result != null) {
+						result.clear();
+					}
+					if(pojoFieldModels != null ) {
+						pojoFieldModels.clear();
+					}
 					pojoFieldModels = getFields();
 					for (CustomField customField : pojoFieldModels) {
 						TableItem item = new TableItem (table, SWT.NONE);
+						item.setData(customField);
 						item.setText (0, customField.getName());
 						item.setText (1, customField.getId());
 					}
@@ -141,6 +147,9 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 					JIRACustomField field = JiraPaletteFactory.eINSTANCE.createJIRACustomField();
 					field.setLabel(source.getText(1));
 					field.setId(source.getText(0));
+					CustomField data = (CustomField) source.getData();
+					FieldSchema fieldSchema = JiraPaletteFactory.eINSTANCE.createFieldSchema();
+					fieldSchema.setType(data.getSchema().getType());
 					result.add(field);
 				}
 			}

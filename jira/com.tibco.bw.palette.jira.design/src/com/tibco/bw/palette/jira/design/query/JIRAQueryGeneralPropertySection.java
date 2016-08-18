@@ -75,6 +75,7 @@ AbstractBWTransactionalSection {
 
 								@Override
 								protected void doExecute() {
+									model.getCustomFields().clear();
 									for (JIRACustomField jiraCustomField : result) {
 										model.getCustomFields().add(jiraCustomField);
 									}
