@@ -37,6 +37,7 @@ IWorkbenchPreferencePage {
 	public void createFieldEditors() {
 		addField(
 				new StringFieldEditor(PreferenceConstants.P_USER, "JIRA Username:", getFieldEditorParent()));
+
 		StringFieldEditor editor = new StringFieldEditor(PreferenceConstants.P_PASSWORD, "Password: ", getFieldEditorParent()){
 
 			@Override

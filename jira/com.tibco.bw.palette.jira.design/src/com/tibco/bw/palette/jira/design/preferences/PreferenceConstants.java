@@ -7,7 +7,7 @@ public class PreferenceConstants {
 
 
 	public static final String P_USER= "userNamePreference";
-	public static final String P_PASSWORD = "userNamePreference";
+	public static final String P_PASSWORD = "passwordNamePreference";
 
 
 }
