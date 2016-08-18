@@ -2,15 +2,19 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 
+import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
-
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.QueryImpl#getExpandNames <em>Expand Names</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.QueryImpl#getConnection <em>Connection</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.QueryImpl#getCustomFields <em>Custom Fields</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +71,16 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * @ordered
 	 */
 	protected String connection = CONNECTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustomFields() <em>Custom Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<JIRACustomField> customFields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +148,32 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<JIRACustomField> getCustomFields() {
+		if (customFields == null) {
+			customFields = new EObjectContainmentEList<JIRACustomField>(JIRACustomField.class, this, JiraPalettePackage.QUERY__CUSTOM_FIELDS);
+		}
+		return customFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case JiraPalettePackage.QUERY__CUSTOM_FIELDS:
+				return ((InternalEList<?>)getCustomFields()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +181,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 				return getExpandNames();
 			case JiraPalettePackage.QUERY__CONNECTION:
 				return getConnection();
+			case JiraPalettePackage.QUERY__CUSTOM_FIELDS:
+				return getCustomFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -149,6 +192,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -157,6 +201,10 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 				return;
 			case JiraPalettePackage.QUERY__CONNECTION:
 				setConnection((String)newValue);
+				return;
+			case JiraPalettePackage.QUERY__CUSTOM_FIELDS:
+				getCustomFields().clear();
+				getCustomFields().addAll((Collection<? extends JIRACustomField>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +224,9 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 			case JiraPalettePackage.QUERY__CONNECTION:
 				setConnection(CONNECTION_EDEFAULT);
 				return;
+			case JiraPalettePackage.QUERY__CUSTOM_FIELDS:
+				getCustomFields().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +243,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 				return EXPAND_NAMES_EDEFAULT == null ? expandNames != null : !EXPAND_NAMES_EDEFAULT.equals(expandNames);
 			case JiraPalettePackage.QUERY__CONNECTION:
 				return CONNECTION_EDEFAULT == null ? connection != null : !CONNECTION_EDEFAULT.equals(connection);
+			case JiraPalettePackage.QUERY__CUSTOM_FIELDS:
+				return customFields != null && !customFields.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

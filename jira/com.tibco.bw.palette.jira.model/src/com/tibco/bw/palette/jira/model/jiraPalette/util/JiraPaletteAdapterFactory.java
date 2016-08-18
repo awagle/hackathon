@@ -72,8 +72,17 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 				return createQueryAdapter();
 			}
 			@Override
+<<<<<<< HEAD
 			public Adapter caseCreate(Create object) {
 				return createCreateAdapter();
+=======
+			public Adapter caseJIRACustomField(JIRACustomField object) {
+				return createJIRACustomFieldAdapter();
+			}
+			@Override
+			public Adapter caseFieldSchema(FieldSchema object) {
+				return createFieldSchemaAdapter();
+>>>>>>> master
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -110,16 +119,41 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create <em>Create</em>}'.
+=======
+	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField <em>JIRA Custom Field</em>}'.
+>>>>>>> master
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
+<<<<<<< HEAD
 	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create
 	 * @generated
 	 */
 	public Adapter createCreateAdapter() {
+=======
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField
+	 * @generated
+	 */
+	public Adapter createJIRACustomFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema <em>Field Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema
+	 * @generated
+	 */
+	public Adapter createFieldSchemaAdapter() {
+>>>>>>> master
 		return null;
 	}
 

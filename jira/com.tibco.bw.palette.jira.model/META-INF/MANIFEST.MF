@@ -10,6 +10,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.tibco.bw.palette.jira.model.jiraPalette;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.impl;version="6.0.0",
  com.tibco.bw.palette.jira.model.jiraPalette.util;version="6.0.0"
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: com.tibco.org.oasis.sca;version="[6.0.200,7.0.0)",
  org.eclipse.emf.common;version="[0.0.0,3.0.0)",

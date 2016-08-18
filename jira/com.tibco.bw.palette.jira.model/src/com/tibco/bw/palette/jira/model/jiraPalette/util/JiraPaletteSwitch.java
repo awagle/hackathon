@@ -89,9 +89,21 @@ public class JiraPaletteSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+<<<<<<< HEAD
 			case JiraPalettePackage.CREATE: {
 				Create create = (Create)theEObject;
 				T result = caseCreate(create);
+=======
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD: {
+				JIRACustomField jiraCustomField = (JIRACustomField)theEObject;
+				T result = caseJIRACustomField(jiraCustomField);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JiraPalettePackage.FIELD_SCHEMA: {
+				FieldSchema fieldSchema = (FieldSchema)theEObject;
+				T result = caseFieldSchema(fieldSchema);
+>>>>>>> master
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,17 +127,44 @@ public class JiraPaletteSwitch<T> {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the result of interpreting the object as an instance of '<em>Create</em>'.
+=======
+	 * Returns the result of interpreting the object as an instance of '<em>JIRA Custom Field</em>'.
+>>>>>>> master
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
+<<<<<<< HEAD
 	 * @return the result of interpreting the object as an instance of '<em>Create</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
 	public T caseCreate(Create object) {
+=======
+	 * @return the result of interpreting the object as an instance of '<em>JIRA Custom Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJIRACustomField(JIRACustomField object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field Schema</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFieldSchema(FieldSchema object) {
+>>>>>>> master
 		return null;
 	}
 

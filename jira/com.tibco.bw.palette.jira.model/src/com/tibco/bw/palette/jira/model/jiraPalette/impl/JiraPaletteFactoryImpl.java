@@ -58,7 +58,12 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case JiraPalettePackage.QUERY: return createQuery();
+<<<<<<< HEAD
 			case JiraPalettePackage.CREATE: return createCreate();
+=======
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD: return createJIRACustomField();
+			case JiraPalettePackage.FIELD_SCHEMA: return createFieldSchema();
+>>>>>>> master
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -109,9 +114,15 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
 	public Create createCreate() {
 		CreateImpl create = new CreateImpl();
 		return create;
+=======
+	public JIRACustomField createJIRACustomField() {
+		JIRACustomFieldImpl jiraCustomField = new JIRACustomFieldImpl();
+		return jiraCustomField;
+>>>>>>> master
 	}
 
 	/**
@@ -119,6 +130,7 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
 	public IssueTypes createIssueTypesFromString(EDataType eDataType, String initialValue) {
 		IssueTypes result = IssueTypes.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -132,6 +144,11 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	 */
 	public String convertIssueTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+=======
+	public FieldSchema createFieldSchema() {
+		FieldSchemaImpl fieldSchema = new FieldSchemaImpl();
+		return fieldSchema;
+>>>>>>> master
 	}
 
 	/**

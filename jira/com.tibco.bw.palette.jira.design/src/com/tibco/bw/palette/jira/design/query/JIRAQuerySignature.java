@@ -37,7 +37,7 @@ public class JIRAQuerySignature extends BWActivitySignature {
 		XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(schema, getInputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
 
 		XSDUtility.addSimpleTypeElement(inputGroup, "jql", "string", 1, 1);
-		XSDUtility.addSimpleTypeElement(inputGroup, "timout", "long", 0, 1);
+		XSDUtility.addSimpleTypeElement(inputGroup, "timeout", "long", 0, 1);
 		XSDUtility.addSimpleTypeElement(inputGroup, "limit", "long", 0, 1);
 		schema = compileSchema(schema);
 		retVal = schema.resolveElementDeclaration(getInputTypeRootName());
@@ -47,7 +47,18 @@ public class JIRAQuerySignature extends BWActivitySignature {
 	@Override
 	public XSDElementDeclaration getOutputType(Configuration config)
 			throws BWActivitySignatureUnknown {
-		// TODO Auto-generated method stub
+		String namespace = createNamespace(new Object[] { TARGET_NS, config,
+		"input" });
+		//				XSDSchema schema = XSDUtility.createSchema(namespace);
+		//				XSDElementDeclaration retVal = null;
+		//				XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(schema, getOutputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
+		//				XSDModelGroup issues = XSDUtility.addAnonymousComplexTypeElement(inputGroup, "Issues", 0, -1, XSDCompositor.SEQUENCE_LITERAL);
+		//				XSDModelGroup issue = XSDUtility.addAnonymousComplexTypeElement(issues, "issue", 0, -1, XSDCompositor.SEQUENCE_LITERAL);
+		//		
+		//				Query model = (Query) getDefaultEMFConfigObject(config);
+		//				String fields = model.getExpandNames();
+		//				schema = compileSchema(schema);
+		//				retVal = schema.resolveElementDeclaration(getOutputTypeRootName());
 		return null;
 	}
 
@@ -66,5 +77,6 @@ public class JIRAQuerySignature extends BWActivitySignature {
 	public boolean isSynchronous() {
 		return false;
 	}
+
 
 }
