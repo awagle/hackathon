@@ -76,26 +76,26 @@ public interface JIRACustomField extends EObject {
 	void setId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' reference.
+	 * Returns the value of the '<em><b>Schema</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' reference.
+	 * @return the value of the '<em>Schema</em>' containment reference.
 	 * @see #setSchema(FieldSchema)
 	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage#getJIRACustomField_Schema()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	FieldSchema getSchema();
 
 	/**
-	 * Sets the value of the '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema <em>Schema</em>}' reference.
+	 * Sets the value of the '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema <em>Schema</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' reference.
+	 * @param value the new value of the '<em>Schema</em>' containment reference.
 	 * @see #getSchema()
 	 * @generated
 	 */

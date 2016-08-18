@@ -8,6 +8,7 @@ import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -71,7 +72,7 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSchema()
@@ -147,14 +148,6 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public FieldSchema getSchema() {
-		if (schema != null && schema.eIsProxy()) {
-			InternalEObject oldSchema = (InternalEObject)schema;
-			schema = (FieldSchema)eResolveProxy(oldSchema);
-			if (schema != oldSchema) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, oldSchema, schema));
-			}
-		}
 		return schema;
 	}
 
@@ -163,8 +156,14 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldSchema basicGetSchema() {
-		return schema;
+	public NotificationChain basicSetSchema(FieldSchema newSchema, NotificationChain msgs) {
+		FieldSchema oldSchema = schema;
+		schema = newSchema;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, oldSchema, newSchema);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -173,10 +172,31 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void setSchema(FieldSchema newSchema) {
-		FieldSchema oldSchema = schema;
-		schema = newSchema;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, oldSchema, schema));
+		if (newSchema != schema) {
+			NotificationChain msgs = null;
+			if (schema != null)
+				msgs = ((InternalEObject)schema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, null, msgs);
+			if (newSchema != null)
+				msgs = ((InternalEObject)newSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, null, msgs);
+			msgs = basicSetSchema(newSchema, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, newSchema, newSchema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
+				return basicSetSchema(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -192,8 +212,7 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__ID:
 				return getId();
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
-				if (resolve) return getSchema();
-				return basicGetSchema();
+				return getSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
