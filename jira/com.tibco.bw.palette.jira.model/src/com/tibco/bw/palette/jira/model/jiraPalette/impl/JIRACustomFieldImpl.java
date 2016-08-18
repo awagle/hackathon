@@ -2,6 +2,7 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 
+import com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema;
 import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 
@@ -9,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl#getId <em>Id</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl#getSchema <em>Schema</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +69,16 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchema()
+	 * @generated
+	 * @ordered
+	 */
+	protected FieldSchema schema;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FieldSchema getSchema() {
+		if (schema != null && schema.eIsProxy()) {
+			InternalEObject oldSchema = (InternalEObject)schema;
+			schema = (FieldSchema)eResolveProxy(oldSchema);
+			if (schema != oldSchema) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, oldSchema, schema));
+			}
+		}
+		return schema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FieldSchema basicGetSchema() {
+		return schema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSchema(FieldSchema newSchema) {
+		FieldSchema oldSchema = schema;
+		schema = newSchema;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA, oldSchema, schema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 				return getLabel();
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__ID:
 				return getId();
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
+				if (resolve) return getSchema();
+				return basicGetSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__ID:
 				setId((String)newValue);
+				return;
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
+				setSchema((FieldSchema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
+				setSchema((FieldSchema)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class JIRACustomFieldImpl extends MinimalEObjectImpl.Container implements
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case JiraPalettePackage.JIRA_CUSTOM_FIELD__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case JiraPalettePackage.JIRA_CUSTOM_FIELD__SCHEMA:
+				return schema != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -131,13 +131,22 @@ public interface JiraPalettePackage extends EPackage {
 	int JIRA_CUSTOM_FIELD__ID = 1;
 
 	/**
+	 * The feature id for the '<em><b>Schema</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JIRA_CUSTOM_FIELD__SCHEMA = 2;
+
+	/**
 	 * The number of structural features of the '<em>JIRA Custom Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JIRA_CUSTOM_FIELD_FEATURE_COUNT = 2;
+	int JIRA_CUSTOM_FIELD_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl <em>Field Schema</em>}' class.
@@ -309,6 +318,17 @@ public interface JiraPalettePackage extends EPackage {
 	EAttribute getJIRACustomField_Id();
 
 	/**
+	 * Returns the meta object for the reference '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema <em>Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Schema</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema()
+	 * @see #getJIRACustomField()
+	 * @generated
+	 */
+	EReference getJIRACustomField_Schema();
+
+	/**
 	 * Returns the meta object for class '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema <em>Field Schema</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -474,6 +494,14 @@ public interface JiraPalettePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute JIRA_CUSTOM_FIELD__ID = eINSTANCE.getJIRACustomField_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Schema</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JIRA_CUSTOM_FIELD__SCHEMA = eINSTANCE.getJIRACustomField_Schema();
 
 		/**
 		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl <em>Field Schema</em>}' class.

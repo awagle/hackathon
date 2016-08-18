@@ -189,6 +189,15 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJIRACustomField_Schema() {
+		return (EReference)jiraCustomFieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFieldSchema() {
 		return fieldSchemaEClass;
 	}
@@ -292,6 +301,7 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		jiraCustomFieldEClass = createEClass(JIRA_CUSTOM_FIELD);
 		createEAttribute(jiraCustomFieldEClass, JIRA_CUSTOM_FIELD__LABEL);
 		createEAttribute(jiraCustomFieldEClass, JIRA_CUSTOM_FIELD__ID);
+		createEReference(jiraCustomFieldEClass, JIRA_CUSTOM_FIELD__SCHEMA);
 
 		fieldSchemaEClass = createEClass(FIELD_SCHEMA);
 		createEAttribute(fieldSchemaEClass, FIELD_SCHEMA__TYPE);
@@ -344,6 +354,7 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		initEClass(jiraCustomFieldEClass, JIRACustomField.class, "JIRACustomField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJIRACustomField_Label(), ecorePackage.getEString(), "label", null, 0, 1, JIRACustomField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJIRACustomField_Id(), ecorePackage.getEString(), "id", null, 0, 1, JIRACustomField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJIRACustomField_Schema(), this.getFieldSchema(), null, "schema", null, 0, 1, JIRACustomField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldSchemaEClass, FieldSchema.class, "FieldSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFieldSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, FieldSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

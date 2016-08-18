@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getLabel <em>Label</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getId <em>Id</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema <em>Schema</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface JIRACustomField extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Schema</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schema</em>' reference.
+	 * @see #setSchema(FieldSchema)
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage#getJIRACustomField_Schema()
+	 * @model
+	 * @generated
+	 */
+	FieldSchema getSchema();
+
+	/**
+	 * Sets the value of the '{@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField#getSchema <em>Schema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Schema</em>' reference.
+	 * @see #getSchema()
+	 * @generated
+	 */
+	void setSchema(FieldSchema value);
 
 } // JIRACustomField
