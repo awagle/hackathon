@@ -21,6 +21,12 @@
             largeIcon="icons/obj32/Call.gif"
             smallIcon="icons/obj16/Call.gif">
       </activityIcon>
+      <activityIcon
+            activityTypeID="bw.jira.create"
+            diagramIcon="icons/obj48/Call.gif"
+            largeIcon="icons/obj32/Call.gif"
+            smallIcon="icons/obj16/Call.gif">
+      </activityIcon>
    </extension>
 
 </plugin>

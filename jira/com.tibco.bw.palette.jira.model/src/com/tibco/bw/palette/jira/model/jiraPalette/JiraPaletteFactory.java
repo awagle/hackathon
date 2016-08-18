@@ -31,6 +31,15 @@ public interface JiraPaletteFactory extends EFactory {
 	Query createQuery();
 
 	/**
+<<<<<<< HEAD
+	 * Returns a new object of class '<em>Create</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Create</em>'.
+	 * @generated
+	 */
+	Create createCreate();
+=======
 	 * Returns a new object of class '<em>JIRA Custom Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +56,7 @@ public interface JiraPaletteFactory extends EFactory {
 	 * @generated
 	 */
 	FieldSchema createFieldSchema();
+>>>>>>> master
 
 	/**
 	 * Returns the package supported by this factory.

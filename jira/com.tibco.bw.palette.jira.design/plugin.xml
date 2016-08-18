@@ -24,6 +24,16 @@
                paletteID="bw.jira">
          </palette>
       </activityType>
+      <activityType
+            activityTypeID="bw.jira.create"
+            name="JIRA Create"
+            priority="200"
+            type="Standard"
+            visible="true">
+         <palette
+               paletteID="bw.jira">
+         </palette>
+      </activityType>
    </extension>
    <extension
          point="com.tibco.bw.design.ActivityTypeConfigEMF">
@@ -34,6 +44,13 @@
               instanceName="JIRA Query"
               modelHelperClass="com.tibco.bw.palette.jira.design.query.JIRAQueryModelHelper">
       </config>
+        <config
+              activityTypeID="bw.jira.create"
+              eClassName="Create"
+              ePackageNSURI="http://ns.tibco.com/bw/palette/jira"
+              instanceName="JIRA Create"
+              modelHelperClass="com.tibco.bw.palette.jira.design.create.JIRACreateModelHelper">
+        </config>
    </extension>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
@@ -46,6 +63,13 @@
                id="bw.jira.JIRAQuery.general"
                tab="tibco.bw.activity.property.tab.general">
          </propertySection>
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.tibco.bw.palette.jira.design.create.JIRACreateGeneralPropertySection"
+               filter="com.tibco.bw.palette.jira.design.create.JIRACreateGeneralPropertySection"
+               id="bw.jira.create.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
       </propertySections>
    </extension>
    <extension
@@ -53,6 +77,10 @@
       <signature
             activityTypeID="bw.jira.JIRAQuery"
             signatureClass="com.tibco.bw.palette.jira.design.query.JIRAQuerySignature">
+      </signature>
+      <signature
+            activityTypeID="bw.jira.create"
+            signatureClass="com.tibco.bw.palette.jira.design.create.JIRACreateSignature">
       </signature>
    </extension>
    <extension

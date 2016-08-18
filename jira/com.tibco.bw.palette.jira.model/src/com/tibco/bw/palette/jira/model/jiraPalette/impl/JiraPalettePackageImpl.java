@@ -2,14 +2,20 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 
+<<<<<<< HEAD
+import com.tibco.bw.palette.jira.model.jiraPalette.Create;
+import com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes;
+=======
 import com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema;
 import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
+>>>>>>> master
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -34,14 +40,22 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	private EClass createEClass = null;
+=======
 	private EClass jiraCustomFieldEClass = null;
 
+>>>>>>> master
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	private EEnum issueTypesEEnum = null;
+=======
 	private EClass fieldSchemaEClass = null;
+>>>>>>> master
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -136,8 +150,13 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	public EClass getCreate() {
+		return createEClass;
+=======
 	public EReference getQuery_CustomFields() {
 		return (EReference)queryEClass.getEStructuralFeatures().get(2);
+>>>>>>> master
 	}
 
 	/**
@@ -145,8 +164,13 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	public EAttribute getCreate_Connection() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(0);
+=======
 	public EClass getJIRACustomField() {
 		return jiraCustomFieldEClass;
+>>>>>>> master
 	}
 
 	/**
@@ -154,8 +178,13 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	public EAttribute getCreate_IssueType() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(1);
+=======
 	public EAttribute getJIRACustomField_Label() {
 		return (EAttribute)jiraCustomFieldEClass.getEStructuralFeatures().get(0);
+>>>>>>> master
 	}
 
 	/**
@@ -163,6 +192,10 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
+	public EEnum getIssueTypes() {
+		return issueTypesEEnum;
+=======
 	public EAttribute getJIRACustomField_Id() {
 		return (EAttribute)jiraCustomFieldEClass.getEStructuralFeatures().get(1);
 	}
@@ -192,6 +225,7 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 */
 	public EAttribute getFieldSchema_Custom() {
 		return (EAttribute)fieldSchemaEClass.getEStructuralFeatures().get(1);
+>>>>>>> master
 	}
 
 	/**
@@ -225,6 +259,15 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		queryEClass = createEClass(QUERY);
 		createEAttribute(queryEClass, QUERY__EXPAND_NAMES);
 		createEAttribute(queryEClass, QUERY__CONNECTION);
+<<<<<<< HEAD
+
+		createEClass = createEClass(CREATE);
+		createEAttribute(createEClass, CREATE__CONNECTION);
+		createEAttribute(createEClass, CREATE__ISSUE_TYPE);
+
+		// Create enums
+		issueTypesEEnum = createEEnum(ISSUE_TYPES);
+=======
 		createEReference(queryEClass, QUERY__CUSTOM_FIELDS);
 
 		jiraCustomFieldEClass = createEClass(JIRA_CUSTOM_FIELD);
@@ -234,6 +277,7 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		fieldSchemaEClass = createEClass(FIELD_SCHEMA);
 		createEAttribute(fieldSchemaEClass, FIELD_SCHEMA__TYPE);
 		createEAttribute(fieldSchemaEClass, FIELD_SCHEMA__CUSTOM);
+>>>>>>> master
 	}
 
 	/**
@@ -278,6 +322,17 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		initEClass(fieldSchemaEClass, FieldSchema.class, "FieldSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFieldSchema_Type(), ecorePackage.getEString(), "type", null, 0, 1, FieldSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFieldSchema_Custom(), ecorePackage.getEString(), "custom", null, 0, 1, FieldSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreate_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreate_IssueType(), this.getIssueTypes(), "issueType", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(issueTypesEEnum, IssueTypes.class, "IssueTypes");
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.TASK);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.ENHANCEMENT);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.FEATURE);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.DEFECT);
 
 		// Create resource
 		createResource(eNS_URI);
