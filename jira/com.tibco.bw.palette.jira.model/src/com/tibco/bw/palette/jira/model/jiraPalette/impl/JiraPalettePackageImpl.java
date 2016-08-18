@@ -2,12 +2,15 @@
  */
 package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 
+import com.tibco.bw.palette.jira.model.jiraPalette.Create;
+import com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -25,6 +28,19 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * @generated
 	 */
 	private EClass queryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass createEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum issueTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -119,6 +135,42 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCreate() {
+		return createEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreate_Connection() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreate_IssueType() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getIssueTypes() {
+		return issueTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public JiraPaletteFactory getJiraPaletteFactory() {
 		return (JiraPaletteFactory)getEFactoryInstance();
 	}
@@ -145,6 +197,13 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		queryEClass = createEClass(QUERY);
 		createEAttribute(queryEClass, QUERY__EXPAND_NAMES);
 		createEAttribute(queryEClass, QUERY__CONNECTION);
+
+		createEClass = createEClass(CREATE);
+		createEAttribute(createEClass, CREATE__CONNECTION);
+		createEAttribute(createEClass, CREATE__ISSUE_TYPE);
+
+		// Create enums
+		issueTypesEEnum = createEEnum(ISSUE_TYPES);
 	}
 
 	/**
@@ -180,6 +239,17 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuery_ExpandNames(), ecorePackage.getEString(), "expandNames", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuery_Connection(), ecorePackage.getEString(), "connection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreate_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreate_IssueType(), this.getIssueTypes(), "issueType", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(issueTypesEEnum, IssueTypes.class, "IssueTypes");
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.TASK);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.ENHANCEMENT);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.FEATURE);
+		addEEnumLiteral(issueTypesEEnum, IssueTypes.DEFECT);
 
 		// Create resource
 		createResource(eNS_URI);

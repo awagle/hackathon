@@ -72,6 +72,10 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 				return createQueryAdapter();
 			}
 			@Override
+			public Adapter caseCreate(Create object) {
+				return createCreateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -102,6 +106,20 @@ public class JiraPaletteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQueryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create <em>Create</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create
+	 * @generated
+	 */
+	public Adapter createCreateAdapter() {
 		return null;
 	}
 

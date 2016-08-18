@@ -5,4 +5,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expandNames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="connection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connection" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="issueType" lowerBound="1"
+        eType="#//IssueTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IssueTypes">
+    <eLiterals name="TASK" literal="TASK"/>
+    <eLiterals name="ENHANCEMENT" value="1"/>
+    <eLiterals name="FEATURE" value="2"/>
+    <eLiterals name="DEFECT" value="3"/>
+  </eClassifiers>
 </ecore:EPackage>

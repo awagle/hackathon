@@ -5,6 +5,7 @@ package com.tibco.bw.palette.jira.model.jiraPalette.impl;
 import com.tibco.bw.palette.jira.model.jiraPalette.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,8 +58,39 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case JiraPalettePackage.QUERY: return createQuery();
+			case JiraPalettePackage.CREATE: return createCreate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case JiraPalettePackage.ISSUE_TYPES:
+				return createIssueTypesFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case JiraPalettePackage.ISSUE_TYPES:
+				return convertIssueTypesToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -70,6 +102,36 @@ public class JiraPaletteFactoryImpl extends EFactoryImpl implements JiraPaletteF
 	public Query createQuery() {
 		QueryImpl query = new QueryImpl();
 		return query;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Create createCreate() {
+		CreateImpl create = new CreateImpl();
+		return create;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IssueTypes createIssueTypesFromString(EDataType eDataType, String initialValue) {
+		IssueTypes result = IssueTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIssueTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

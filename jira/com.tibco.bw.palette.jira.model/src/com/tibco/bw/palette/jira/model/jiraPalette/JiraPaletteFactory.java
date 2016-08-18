@@ -31,6 +31,15 @@ public interface JiraPaletteFactory extends EFactory {
 	Query createQuery();
 
 	/**
+	 * Returns a new object of class '<em>Create</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Create</em>'.
+	 * @generated
+	 */
+	Create createCreate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
