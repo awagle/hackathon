@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.tibco.bw.palette.jira.runtime">
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.bw.palette.jira.JIRAQuery" name="bw.jira.JIRAQuery">
    <implementation class="com.tibco.bw.palette.jira.runtime.JiraQueryActivity"/>
-   <property name="activityTypeID" type="String" value="bw.jira.query"/>
+   <property name="activityTypeID" type="String" value="bw.jira.JIRAQuery"/>
    <property name="modelPackageClass" type="String" value="com.tibco.bw.palette.jira.model.JiraPalettePackage"/>
    <property name="runtimeClass" type="String" value="com.tibco.bw.palette.jira.runtime.JiraQueryActivity"/>
 </scr:component>
