@@ -12,8 +12,9 @@ import com.tibco.bw.palette.jira.model.jiraPalette.JiraPaletteFactory;
 
 public class JIRACreateModelHelper extends BWAbstractModelHelper {
 
-	QName HTTP_QNAME = new QName("http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient", "HttpClientConfiguration");
-
+	QName HTTP_QNAME = new QName(
+			"http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient",
+			"HttpClientConfiguration");
 
 	public JIRACreateModelHelper() {
 		// TODO Auto-generated constructor stub
@@ -25,8 +26,6 @@ public class JIRACreateModelHelper extends BWAbstractModelHelper {
 		return instance;
 	}
 
-
-
 	@Override
 	public void setProcessProperty(EObject model, Object container) {
 		if (model == null) {
@@ -36,7 +35,8 @@ public class JIRACreateModelHelper extends BWAbstractModelHelper {
 			return;
 		}
 		boolean found = false;
-		for (ProcessProperty property : ModelHelper.INSTANCE.getProperties(container)) {
+		for (ProcessProperty property : ModelHelper.INSTANCE
+				.getProperties(container)) {
 			if (ModelHelper.INSTANCE.isEqual(property.getType(), HTTP_QNAME)) {
 				((Create) model).setConnection(property.getName());
 				found = true;
@@ -45,7 +45,8 @@ public class JIRACreateModelHelper extends BWAbstractModelHelper {
 		}
 
 		if (!found) {
-			ProcessProperty property = ModelHelper.INSTANCE.createProperty(container, "jiraProperty", HTTP_QNAME, "");
+			ProcessProperty property = ModelHelper.INSTANCE.createProperty(
+					container, "jiraProperty", HTTP_QNAME, "");
 			if (property != null) {
 				((Create) model).setConnection(property.getName());
 			}

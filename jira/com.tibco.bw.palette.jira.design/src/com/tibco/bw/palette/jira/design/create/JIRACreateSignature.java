@@ -14,7 +14,7 @@ import com.tibco.bw.model.activityconfig.Configuration;
 
 public class JIRACreateSignature extends BWActivitySignature {
 
-	protected final static String TARGET_NS = "http://www.tibco.com/namespaces/tnt/plugins/jira"; 
+	protected final static String TARGET_NS = "http://www.tibco.com/namespaces/tnt/plugins/jira";
 
 	public JIRACreateSignature() {
 		// TODO Auto-generated constructor stub
@@ -31,10 +31,11 @@ public class JIRACreateSignature extends BWActivitySignature {
 	public XSDElementDeclaration getInputType(Configuration config)
 			throws BWActivitySignatureUnknown {
 		String namespace = createNamespace(new Object[] { TARGET_NS, config,
-		"input" });
+				"input" });
 		XSDSchema schema = XSDUtility.createSchema(namespace);
 		XSDElementDeclaration retVal = null;
-		XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(schema, getInputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
+		XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(
+				schema, getInputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
 
 		XSDUtility.addSimpleTypeElement(inputGroup, "jql", "string", 1, 1);
 		XSDUtility.addSimpleTypeElement(inputGroup, "timout", "long", 0, 1);
@@ -60,7 +61,6 @@ public class JIRACreateSignature extends BWActivitySignature {
 	public String getOutputTypeRootName() {
 		return "jiraCreateOutput"; //$NON-NLS-1$
 	}
-
 
 	@Override
 	public boolean isSynchronous() {

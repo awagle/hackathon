@@ -14,8 +14,10 @@ import com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes;
 import com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage;
 
 public class JIRACreateGeneralPropertySection extends
-AbstractBWTransactionalSection {
-	QName HTTP_QNAME = new QName("http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient", "HttpClientConfiguration");
+		AbstractBWTransactionalSection {
+	QName HTTP_QNAME = new QName(
+			"http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient",
+			"HttpClientConfiguration");
 	private PropertyField propField;
 	private CustomComboViewer issueTypeField;
 
@@ -25,20 +27,27 @@ AbstractBWTransactionalSection {
 
 	@Override
 	protected void initBindings() {
-		getBindingManager().bind(propField, JiraPalettePackage.Literals.CREATE__CONNECTION, getInput(), 
-				BWFieldFactory.getInstance().getPropertyTargetToModelUpdateValueStrategy(), null);
+		getBindingManager().bind(
+				propField,
+				JiraPalettePackage.Literals.CREATE__CONNECTION,
+				getInput(),
+				BWFieldFactory.getInstance()
+						.getPropertyTargetToModelUpdateValueStrategy(), null);
 
-		getBindingManager().bindCustomViewer(issueTypeField, getInput(), JiraPalettePackage.Literals.CREATE__ISSUE_TYPE);
+		getBindingManager().bindCustomViewer(issueTypeField, getInput(),
+				JiraPalettePackage.Literals.CREATE__ISSUE_TYPE);
 
 	}
 
 	@Override
 	protected Composite doCreateControl(Composite root) {
-		Composite parent = BWFieldFactory.getInstance().createComposite(root, 2);
+		Composite parent = BWFieldFactory.getInstance()
+				.createComposite(root, 2);
 		BWFieldFactory.getInstance().createLabel(parent, "Connection", true);
-		propField = BWFieldFactory.getInstance().createPropertyField(parent, BWDesignConstants.PROPERTY, HTTP_QNAME);
+		propField = BWFieldFactory.getInstance().createPropertyField(parent,
+				BWDesignConstants.PROPERTY, HTTP_QNAME);
 
-		BWFieldFactory.getInstance().createLabel(parent, "IssueType", true);
+		BWFieldFactory.getInstance().createLabel(parent, "Issue Type", true);
 		issueTypeField = BWFieldFactory.getInstance().createComboViewer(parent);
 		issueTypeField.setContentProvider(new EnumeratorContentProvider());
 		issueTypeField.setInput(IssueTypes.class);
