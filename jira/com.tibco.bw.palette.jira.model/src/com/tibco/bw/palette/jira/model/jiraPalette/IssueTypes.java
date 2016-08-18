@@ -26,7 +26,9 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TASK(0, "TASK", "TASK"), /**
+	TASK(0, "TASK", "TASK"),
+
+	/**
 	 * The '<em><b>ENHANCEMENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,7 +36,9 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENHANCEMENT(1, "ENHANCEMENT", "ENHANCEMENT"), /**
+	ENHANCEMENT(1, "ENHANCEMENT", "ENHANCEMENT"),
+
+	/**
 	 * The '<em><b>FEATURE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,7 +46,9 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FEATURE(2, "FEATURE", "FEATURE"), /**
+	FEATURE(2, "FEATURE", "FEATURE"),
+
+	/**
 	 * The '<em><b>DEFECT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

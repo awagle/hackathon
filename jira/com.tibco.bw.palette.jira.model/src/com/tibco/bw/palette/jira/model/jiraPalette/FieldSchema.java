@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getType <em>Type</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getCustom <em>Custom</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface FieldSchema extends EObject {
 	 * @generated
 	 */
 	void setCustom(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Items</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Items</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Items</em>' attribute.
+	 * @see #setItems(String)
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.JiraPalettePackage#getFieldSchema_Items()
+	 * @model
+	 * @generated
+	 */
+	String getItems();
+
+	/**
+	 * Sets the value of the '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getItems <em>Items</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Items</em>' attribute.
+	 * @see #getItems()
+	 * @generated
+	 */
+	void setItems(String value);
 
 } // FieldSchema

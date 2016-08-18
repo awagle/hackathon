@@ -102,7 +102,6 @@ public interface JiraPalettePackage extends EPackage {
 	 */
 	int QUERY_FEATURE_COUNT = 3;
 
-
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.JIRACustomFieldImpl <em>JIRA Custom Field</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -140,7 +139,6 @@ public interface JiraPalettePackage extends EPackage {
 	 */
 	int JIRA_CUSTOM_FIELD_FEATURE_COUNT = 2;
 
-
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl <em>Field Schema</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -170,14 +168,22 @@ public interface JiraPalettePackage extends EPackage {
 	int FIELD_SCHEMA__CUSTOM = 1;
 
 	/**
+	 * The feature id for the '<em><b>Items</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_SCHEMA__ITEMS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Field Schema</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_SCHEMA_FEATURE_COUNT = 2;
-
+	int FIELD_SCHEMA_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl <em>Create</em>}' class.
@@ -187,7 +193,7 @@ public interface JiraPalettePackage extends EPackage {
 	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getCreate()
 	 * @generated
 	 */
-	int CREATE = 1;
+	int CREATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Connection</b></em>' attribute.
@@ -224,7 +230,7 @@ public interface JiraPalettePackage extends EPackage {
 	 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getIssueTypes()
 	 * @generated
 	 */
-	int ISSUE_TYPES = 2;
+	int ISSUE_TYPES = 4;
 
 
 	/**
@@ -260,48 +266,6 @@ public interface JiraPalettePackage extends EPackage {
 	EAttribute getQuery_Connection();
 
 	/**
-<<<<<<< HEAD
-	 * Returns the meta object for class '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create <em>Create</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Create</em>'.
-	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create
-	 * @generated
-	 */
-	EClass getCreate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getConnection <em>Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Connection</em>'.
-	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getConnection()
-	 * @see #getCreate()
-	 * @generated
-	 */
-	EAttribute getCreate_Connection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getIssueType <em>Issue Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Issue Type</em>'.
-	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getIssueType()
-	 * @see #getCreate()
-	 * @generated
-	 */
-	EAttribute getCreate_IssueType();
-
-	/**
-	 * Returns the meta object for enum '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Issue Types</em>'.
-	 * @see com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes
-	 * @generated
-	 */
-	EEnum getIssueTypes();
-=======
 	 * Returns the meta object for the containment reference list '{@link com.tibco.bw.palette.jira.model.jiraPalette.Query#getCustomFields <em>Custom Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,7 +339,59 @@ public interface JiraPalettePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFieldSchema_Custom();
->>>>>>> master
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Items</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.FieldSchema#getItems()
+	 * @see #getFieldSchema()
+	 * @generated
+	 */
+	EAttribute getFieldSchema_Items();
+
+	/**
+	 * Returns the meta object for class '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create <em>Create</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Create</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create
+	 * @generated
+	 */
+	EClass getCreate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getConnection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Connection</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getConnection()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EAttribute getCreate_Connection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getIssueType <em>Issue Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Issue Type</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getIssueType()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EAttribute getCreate_IssueType();
+
+	/**
+	 * Returns the meta object for enum '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Issue Types</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes
+	 * @generated
+	 */
+	EEnum getIssueTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -426,27 +442,6 @@ public interface JiraPalettePackage extends EPackage {
 		EAttribute QUERY__CONNECTION = eINSTANCE.getQuery_Connection();
 
 		/**
-<<<<<<< HEAD
-		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl <em>Create</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl
-		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getCreate()
-		 * @generated
-		 */
-		EClass CREATE = eINSTANCE.getCreate();
-
-		/**
-		 * The meta object literal for the '<em><b>Connection</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREATE__CONNECTION = eINSTANCE.getCreate_Connection();
-
-		/**
-		 * The meta object literal for the '<em><b>Issue Type</b></em>' attribute feature.
-=======
 		 * The meta object literal for the '<em><b>Custom Fields</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -466,24 +461,10 @@ public interface JiraPalettePackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
->>>>>>> master
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-<<<<<<< HEAD
-		EAttribute CREATE__ISSUE_TYPE = eINSTANCE.getCreate_IssueType();
-
-		/**
-		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes
-		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getIssueTypes()
-		 * @generated
-		 */
-		EEnum ISSUE_TYPES = eINSTANCE.getIssueTypes();
-=======
 		EAttribute JIRA_CUSTOM_FIELD__LABEL = eINSTANCE.getJIRACustomField_Label();
 
 		/**
@@ -519,7 +500,50 @@ public interface JiraPalettePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIELD_SCHEMA__CUSTOM = eINSTANCE.getFieldSchema_Custom();
->>>>>>> master
+
+		/**
+		 * The meta object literal for the '<em><b>Items</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD_SCHEMA__ITEMS = eINSTANCE.getFieldSchema_Items();
+
+		/**
+		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl <em>Create</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getCreate()
+		 * @generated
+		 */
+		EClass CREATE = eINSTANCE.getCreate();
+
+		/**
+		 * The meta object literal for the '<em><b>Connection</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATE__CONNECTION = eINSTANCE.getCreate_Connection();
+
+		/**
+		 * The meta object literal for the '<em><b>Issue Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATE__ISSUE_TYPE = eINSTANCE.getCreate_IssueType();
+
+		/**
+		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes
+		 * @see com.tibco.bw.palette.jira.model.jiraPalette.impl.JiraPalettePackageImpl#getIssueTypes()
+		 * @generated
+		 */
+		EEnum ISSUE_TYPES = eINSTANCE.getIssueTypes();
 
 	}
 

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl#getCustom <em>Custom</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.FieldSchemaImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 	 * @ordered
 	 */
 	protected String custom = CUSTOM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getItems() <em>Items</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItems()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ITEMS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getItems() <em>Items</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItems()
+	 * @generated
+	 * @ordered
+	 */
+	protected String items = ITEMS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getItems() {
+		return items;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setItems(String newItems) {
+		String oldItems = items;
+		items = newItems;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JiraPalettePackage.FIELD_SCHEMA__ITEMS, oldItems, items));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 				return getType();
 			case JiraPalettePackage.FIELD_SCHEMA__CUSTOM:
 				return getCustom();
+			case JiraPalettePackage.FIELD_SCHEMA__ITEMS:
+				return getItems();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 				return;
 			case JiraPalettePackage.FIELD_SCHEMA__CUSTOM:
 				setCustom((String)newValue);
+				return;
+			case JiraPalettePackage.FIELD_SCHEMA__ITEMS:
+				setItems((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 			case JiraPalettePackage.FIELD_SCHEMA__CUSTOM:
 				setCustom(CUSTOM_EDEFAULT);
 				return;
+			case JiraPalettePackage.FIELD_SCHEMA__ITEMS:
+				setItems(ITEMS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case JiraPalettePackage.FIELD_SCHEMA__CUSTOM:
 				return CUSTOM_EDEFAULT == null ? custom != null : !CUSTOM_EDEFAULT.equals(custom);
+			case JiraPalettePackage.FIELD_SCHEMA__ITEMS:
+				return ITEMS_EDEFAULT == null ? items != null : !ITEMS_EDEFAULT.equals(items);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class FieldSchemaImpl extends MinimalEObjectImpl.Container implements Fie
 		result.append(type);
 		result.append(", custom: ");
 		result.append(custom);
+		result.append(", items: ");
+		result.append(items);
 		result.append(')');
 		return result.toString();
 	}

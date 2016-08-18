@@ -3,6 +3,7 @@
 package com.tibco.bw.palette.jira.model.jiraPalette;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -81,7 +82,7 @@ public interface Query extends EObject {
 	 * The list contents are of type {@link com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Custom Fields</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Custom Fields</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
