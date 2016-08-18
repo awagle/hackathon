@@ -124,19 +124,20 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 			}
 		});
 
-		if(existingFields.size() > 0){
-			for (JIRACustomField field : existingFields) {
-				TableItem item = new TableItem (table, SWT.NONE);
-				item.setText (0, field.getLabel());
-				item.setText (1, field.getId());
-			}
-		}
+
 
 		for (int i=0; i<titles.length; i++) {
 			TableColumn column = new TableColumn (table, SWT.NONE);
 			column.setWidth(100);
 			column.setText (titles [i]);
 		}	
+		if(existingFields.size() > 0){
+			for (JIRACustomField field : existingFields) {
+				TableItem item = new TableItem (table, SWT.NONE);
+				item.setText (1, field.getLabel());
+				item.setText (0, field.getId());
+			}
+		}
 
 		table.addSelectionListener(new SelectionAdapter() {
 
@@ -150,6 +151,7 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 					CustomField data = (CustomField) source.getData();
 					FieldSchema fieldSchema = JiraPaletteFactory.eINSTANCE.createFieldSchema();
 					fieldSchema.setType(data.getSchema().getType());
+					field.setSchema(fieldSchema);
 					result.add(field);
 				}
 			}
