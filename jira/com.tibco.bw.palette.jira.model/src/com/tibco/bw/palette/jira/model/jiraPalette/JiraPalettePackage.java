@@ -223,13 +223,31 @@ public interface JiraPalettePackage extends EPackage {
 	int CREATE__ISSUE_TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Custom Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__CUSTOM_FIELDS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__PROJECT_NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Create</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_FEATURE_COUNT = 2;
+	int CREATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}' enum.
@@ -404,6 +422,28 @@ public interface JiraPalettePackage extends EPackage {
 	EAttribute getCreate_IssueType();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getCustomFields <em>Custom Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Custom Fields</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getCustomFields()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EReference getCreate_CustomFields();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.jira.model.jiraPalette.Create#getProjectName <em>Project Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Project Name</em>'.
+	 * @see com.tibco.bw.palette.jira.model.jiraPalette.Create#getProjectName()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EAttribute getCreate_ProjectName();
+
+	/**
 	 * Returns the meta object for enum '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -562,6 +602,22 @@ public interface JiraPalettePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CREATE__ISSUE_TYPE = eINSTANCE.getCreate_IssueType();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREATE__CUSTOM_FIELDS = eINSTANCE.getCreate_CustomFields();
+
+		/**
+		 * The meta object literal for the '<em><b>Project Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATE__PROJECT_NAME = eINSTANCE.getCreate_ProjectName();
 
 		/**
 		 * The meta object literal for the '{@link com.tibco.bw.palette.jira.model.jiraPalette.IssueTypes <em>Issue Types</em>}' enum.

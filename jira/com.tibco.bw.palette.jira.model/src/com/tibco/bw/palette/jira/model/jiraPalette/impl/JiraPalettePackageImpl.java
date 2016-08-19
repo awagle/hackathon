@@ -261,6 +261,24 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCreate_CustomFields() {
+		return (EReference)createEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreate_ProjectName() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getIssueTypes() {
 		return issueTypesEEnum;
 	}
@@ -311,6 +329,8 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		createEClass = createEClass(CREATE);
 		createEAttribute(createEClass, CREATE__CONNECTION);
 		createEAttribute(createEClass, CREATE__ISSUE_TYPE);
+		createEReference(createEClass, CREATE__CUSTOM_FIELDS);
+		createEAttribute(createEClass, CREATE__PROJECT_NAME);
 
 		// Create enums
 		issueTypesEEnum = createEEnum(ISSUE_TYPES);
@@ -364,6 +384,8 @@ public class JiraPalettePackageImpl extends EPackageImpl implements JiraPaletteP
 		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreate_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCreate_IssueType(), this.getIssueTypes(), "issueType", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreate_CustomFields(), this.getJIRACustomField(), null, "customFields", null, 0, -1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreate_ProjectName(), ecorePackage.getEString(), "projectName", null, 1, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(issueTypesEEnum, IssueTypes.class, "IssueTypes");

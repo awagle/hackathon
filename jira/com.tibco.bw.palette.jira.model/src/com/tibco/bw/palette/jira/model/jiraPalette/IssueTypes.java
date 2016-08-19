@@ -26,7 +26,7 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TASK(0, "TASK", "TASK"),
+	TASK(0, "TASK", "Task"),
 
 	/**
 	 * The '<em><b>ENHANCEMENT</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENHANCEMENT(1, "ENHANCEMENT", "ENHANCEMENT"),
+	ENHANCEMENT(1, "ENHANCEMENT", "Enhancement"),
 
 	/**
 	 * The '<em><b>FEATURE</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FEATURE(2, "FEATURE", "FEATURE"),
+	FEATURE(2, "FEATURE", "Feature"),
 
 	/**
 	 * The '<em><b>DEFECT</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum IssueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEFECT(3, "DEFECT", "DEFECT");
+	DEFECT(3, "DEFECT", "Defect");
 
 	/**
 	 * The '<em><b>TASK</b></em>' literal value.
@@ -67,7 +67,7 @@ public enum IssueTypes implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TASK
-	 * @model
+	 * @model literal="Task"
 	 * @generated
 	 * @ordered
 	 */
@@ -82,7 +82,7 @@ public enum IssueTypes implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ENHANCEMENT
-	 * @model
+	 * @model literal="Enhancement"
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public enum IssueTypes implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FEATURE
-	 * @model
+	 * @model literal="Feature"
 	 * @generated
 	 * @ordered
 	 */
@@ -112,7 +112,7 @@ public enum IssueTypes implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DEFECT
-	 * @model
+	 * @model literal="Defect"
 	 * @generated
 	 * @ordered
 	 */
