@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl#getConnection <em>Connection</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl#getIssueType <em>Issue Type</em>}</li>
  *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl#getCustomFields <em>Custom Fields</em>}</li>
- *   <li>{@link com.tibco.bw.palette.jira.model.jiraPalette.impl.CreateImpl#getProjectName <em>Project Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,26 +85,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 	 * @ordered
 	 */
 	protected EList<JIRACustomField> customFields;
-
-	/**
-	 * The default value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProjectName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROJECT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProjectName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String projectName = PROJECT_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,27 +164,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getProjectName() {
-		return projectName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProjectName(String newProjectName) {
-		String oldProjectName = projectName;
-		projectName = newProjectName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JiraPalettePackage.CREATE__PROJECT_NAME, oldProjectName, projectName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -229,8 +187,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 				return getIssueType();
 			case JiraPalettePackage.CREATE__CUSTOM_FIELDS:
 				return getCustomFields();
-			case JiraPalettePackage.CREATE__PROJECT_NAME:
-				return getProjectName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,9 +210,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 				getCustomFields().clear();
 				getCustomFields().addAll((Collection<? extends JIRACustomField>)newValue);
 				return;
-			case JiraPalettePackage.CREATE__PROJECT_NAME:
-				setProjectName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -278,9 +231,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 			case JiraPalettePackage.CREATE__CUSTOM_FIELDS:
 				getCustomFields().clear();
 				return;
-			case JiraPalettePackage.CREATE__PROJECT_NAME:
-				setProjectName(PROJECT_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,8 +249,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 				return issueType != ISSUE_TYPE_EDEFAULT;
 			case JiraPalettePackage.CREATE__CUSTOM_FIELDS:
 				return customFields != null && !customFields.isEmpty();
-			case JiraPalettePackage.CREATE__PROJECT_NAME:
-				return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -319,8 +267,6 @@ public class CreateImpl extends MinimalEObjectImpl.Container implements Create {
 		result.append(connection);
 		result.append(", issueType: ");
 		result.append(issueType);
-		result.append(", projectName: ");
-		result.append(projectName);
 		result.append(')');
 		return result.toString();
 	}
