@@ -2,10 +2,17 @@ package com.tibco.bw.palette.jira.design.fieldselector.model;
 
 public class Schema {
 
+	public String items;
 	public String type;
 	public String custom;
 	public long customId;
 
+	public String getItems() {
+		return items;
+	}
+	public void setItems(String items) {
+		this.items = items;
+	}
 	public String getType() {
 		return type;
 	}

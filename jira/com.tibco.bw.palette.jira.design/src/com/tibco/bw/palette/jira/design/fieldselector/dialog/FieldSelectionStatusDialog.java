@@ -7,7 +7,9 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.codec.binary.Base64;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -47,6 +49,7 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 
 	ArrayList<JIRACustomField> result = new ArrayList<>();
 	List<JIRACustomField> existingFields = null;
+	Set<String> myset = new HashSet<>();
 
 	public FieldSelectionStatusDialog(Shell parent, String host,int port,String endpointUrl,List<JIRACustomField> existingFields) {
 		super(parent);
@@ -110,6 +113,11 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 					}
 					pojoFieldModels = getFields();
 					for (CustomField customField : pojoFieldModels) {
+						if(customField.getSchema() != null){
+							if(customField.getSchema().getType().equals("securitylevel") || customField.getSchema().getType().equals("timetracking")){
+								continue;
+							}
+						}
 						TableItem item = new TableItem (table, SWT.NONE);
 						item.setData(customField);
 						item.setText (0, customField.getName());
@@ -118,6 +126,9 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 					for (int i=0; i<titles.length; i++) {
 						table.getColumn (i).pack ();
 					}	
+					for (String string : myset) {
+						System.out.println(string);
+					}
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -151,6 +162,8 @@ public class FieldSelectionStatusDialog extends SelectionStatusDialog {
 					CustomField data = (CustomField) source.getData();
 					FieldSchema fieldSchema = JiraPaletteFactory.eINSTANCE.createFieldSchema();
 					fieldSchema.setType(data.getSchema().getType());
+					fieldSchema.setCustom(data.getSchema().getCustom());
+					fieldSchema.setItems(data.getSchema().getItems());
 					field.setSchema(fieldSchema);
 					result.add(field);
 				}

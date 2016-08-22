@@ -11,6 +11,9 @@ import com.tibco.bw.design.api.BWActivitySignature;
 import com.tibco.bw.design.api.BWActivitySignatureUnknown;
 import com.tibco.bw.design.util.XSDUtility;
 import com.tibco.bw.model.activityconfig.Configuration;
+import com.tibco.bw.palette.jira.design.utils.FieldsXSDUtility;
+import com.tibco.bw.palette.jira.model.jiraPalette.JIRACustomField;
+import com.tibco.bw.palette.jira.model.jiraPalette.Query;
 
 public class JIRAQuerySignature extends BWActivitySignature {
 
@@ -48,18 +51,20 @@ public class JIRAQuerySignature extends BWActivitySignature {
 	public XSDElementDeclaration getOutputType(Configuration config)
 			throws BWActivitySignatureUnknown {
 		String namespace = createNamespace(new Object[] { TARGET_NS, config,
-		"input" });
-		//				XSDSchema schema = XSDUtility.createSchema(namespace);
-		//				XSDElementDeclaration retVal = null;
-		//				XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(schema, getOutputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
-		//				XSDModelGroup issues = XSDUtility.addAnonymousComplexTypeElement(inputGroup, "Issues", 0, -1, XSDCompositor.SEQUENCE_LITERAL);
-		//				XSDModelGroup issue = XSDUtility.addAnonymousComplexTypeElement(issues, "issue", 0, -1, XSDCompositor.SEQUENCE_LITERAL);
-		//		
-		//				Query model = (Query) getDefaultEMFConfigObject(config);
-		//				String fields = model.getExpandNames();
-		//				schema = compileSchema(schema);
-		//				retVal = schema.resolveElementDeclaration(getOutputTypeRootName());
-		return null;
+		"output" });
+		XSDSchema schema = XSDUtility.createSchema(namespace);
+		XSDElementDeclaration retVal = null;
+		XSDModelGroup inputGroup = XSDUtility.addAnonymousComplexTypeElement(schema, getOutputTypeRootName(), XSDCompositor.SEQUENCE_LITERAL);
+		XSDModelGroup issues = XSDUtility.addAnonymousComplexTypeElement(inputGroup, "Issues", 0, 1, XSDCompositor.SEQUENCE_LITERAL);
+		XSDModelGroup issue = XSDUtility.addAnonymousComplexTypeElement(issues, "issue", 0, -1, XSDCompositor.SEQUENCE_LITERAL);
+
+		Query model = (Query) getDefaultEMFConfigObject(config);
+		for (JIRACustomField field : model.getCustomFields()) {
+			FieldsXSDUtility.createElementForField(issue, field);
+		}
+		schema = compileSchema(schema);
+		retVal = schema.resolveElementDeclaration(getOutputTypeRootName());
+		return retVal;
 	}
 
 	@Override
